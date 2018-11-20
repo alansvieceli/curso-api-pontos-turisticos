@@ -21,17 +21,18 @@ python manage.py createsuperuser --email alan.vieceli@gmail.com --username admin
 
 
 /*https://docs.djangoproject.com/en/2.1/topics/migrations/*/
-manage.py makemigrations
-manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 
 /*inicia o servidor*/
-manage.py runserver
+python manage.py runserver
 
 http://127.0.0.1:8000/admin/
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-python manage.py startapp pontos_turisticos
+python manage.py startapp core
+    - resgistrar no settings.py
 python manage.py startapp atracoes
 python manage.py startapp comentarios
 python manage.py startapp avaliacoes

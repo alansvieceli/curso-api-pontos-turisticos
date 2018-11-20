@@ -14,9 +14,10 @@ venv\Scripts\deactivate
 
 
 pip install django
+pip install djangorestframework
 django-admin startproject api-pontos-turisticos .  (cria um novo projeto django, o ponto é pra nao criar um sub diretório)
 
-python manage.py createsuperuser --email admin@example.com --username admin    (https://www.django-rest-framework.org/tutorial/quickstart/)
+python manage.py createsuperuser --email alan.vieceli@gmail.com --username admin    (https://www.django-rest-framework.org/tutorial/quickstart/)
 
 
 /*https://docs.djangoproject.com/en/2.1/topics/migrations/*/

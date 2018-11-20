@@ -109,3 +109,6 @@ idea/
 
 .migrations
 migrations/
+
+.vscode
+vscode/

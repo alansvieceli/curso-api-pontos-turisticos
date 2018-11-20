@@ -31,9 +31,14 @@ http://127.0.0.1:8000/admin/
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-python manage.py startapp core
-    - resgistrar no settings.py
+python manage.py startapp core    
 python manage.py startapp atracoes
 python manage.py startapp comentarios
 python manage.py startapp avaliacoes
 python manage.py startapp endereco
+
+
+    - resgistrar no settings.py (project)
+    - criar pasta api
+    - criar o model no arquivo model.py (app)
+    - registrar no admin.py (app)

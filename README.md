@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/alansvieceli/api-pontos-turisticos.svg?branch=master)](https://travis-ci.org/alansvieceli/api-pontos-turisticos)
+[![Build Status](https://travis-ci.org/alansvieceli/curso-api-pontos-turisticos.svg?branch=master)](https://travis-ci.org/alansvieceli/curso-api-pontos-turisticos)
 
 # api-pontos-turisticos
 

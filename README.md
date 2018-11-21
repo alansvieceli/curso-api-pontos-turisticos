@@ -35,7 +35,7 @@ python manage.py startapp core
 python manage.py startapp atracoes
 python manage.py startapp comentarios
 python manage.py startapp avaliacoes
-python manage.py startapp endereco
+python manage.py startapp enderecos
 
 
     - resgistrar no settings.py (project)

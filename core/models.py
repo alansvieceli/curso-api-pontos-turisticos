@@ -2,6 +2,8 @@ from django.db import models
 from atracoes.models import Atracao
 from comentarios.models import Comentario
 from avaliacoes.models import Avaliacao
+from enderecos.models import Endereco
+
 
 class PontoTurstico(models.Model):
     nome = models.CharField(max_length=150)
@@ -10,7 +12,7 @@ class PontoTurstico(models.Model):
     atracoes = models.ManyToManyField(Atracao)
     comentarios = models.ManyToManyField(Comentario)
     avaliacoes = models.ManyToManyField(Avaliacao)
-    #endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE, null=True, blank=True)
+    enderecos = models.ManyToManyField(Endereco)
 
     def __str__(self):
         return self.nome

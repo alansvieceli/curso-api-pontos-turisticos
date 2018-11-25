@@ -26,7 +26,7 @@ from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 
 router = routers.DefaultRouter()
-router.register('pontoturistico', PontoTursticoViewSet)
+router.register('pontosturistico', PontoTursticoViewSet, base_name='PontoTurstico') #usar base_name quando usarmos get_queryset no modelviewset
 router.register('atracoes', AtracoesViewSet)
 router.register('enderecos', EnderecoViewSet)
 router.register('comentarios', ComentarioViewSet)

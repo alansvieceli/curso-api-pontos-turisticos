@@ -16,20 +16,31 @@ class PontoTursticoViewSet(ModelViewSet):
         id = self.request.query_params.get('id', None)
         nome = self.request.query_params.get('nome', None)
         descricao = self.request.query_params.get('descricao', None)
+        #tem_filtro = False;
 
+        #https://stackoverflow.com/questions/11743207/django-model-case-insensitive-query-filtering
+        #http://127.0.0.1:8000/pontosturisticos/?id=1
 
         queryset = PontoTurstico.objects.all();
 
         if id:
-            queryset = PontoTurstico.objects.filter(id=id)
+            queryset = queryset.filter(id=id)
+            #tem_filtro = True;
 
         if nome:
-            queryset = queryset.filter(nome=nome)
+            queryset = queryset.filter(nome_i=nome)
 
         if descricao:
             queryset = queryset.filter(descricao=descricao)
 
         return queryset
+        '''
+        if tem_filtro:
+            return queryset
+        else:
+            return queryset.filter(aprovado=True)
+        '''
+
 
         #return PontoTurstico.objects.filter(aprovado=True)
 

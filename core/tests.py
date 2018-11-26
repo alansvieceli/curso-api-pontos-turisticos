@@ -5,15 +5,15 @@ from django.urls import reverse
 
 class PontoTuristicoTests(APITestCase):
 
-    url_default = '/pontoturistico/'
-    url_cod_01 = '/pontoturistico/1/'
+    url_default = '/pontosturisticos/'
+    url_cod_01 = '/pontosturisticos/1/'
 
     def test_get_page_status_code(self):
         response = self.client.get(self.url_default)
         self.assertEquals(response.status_code, status.HTTP_200_OK)
 
     def test_post_page_status_code(self):
-        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado'}
+        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado', 'aprovado': 'True'}
         response = self.client.post(self.url_default, data, format='json')
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         '''
@@ -27,7 +27,7 @@ class PontoTuristicoTests(APITestCase):
         self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_put_status_code(self):
-        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado'}
+        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado', 'aprovado': 'True'}
         response = self.client.post(self.url_default, data, format='json')
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         '''
@@ -43,7 +43,7 @@ class PontoTuristicoTests(APITestCase):
         self.assertEquals(response.status_code, status.HTTP_200_OK)
 
     def test_delete_status_code(self):
-        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado'}
+        data = {'nome': 'Ponto 01', 'descricao': 'Terceiro ponto criado', 'aprovado': 'True'}
         response = self.client.post(self.url_default, data, format='json')
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         '''

@@ -16,24 +16,23 @@ class PontoTursticoViewSet(ModelViewSet):
     def get_queryset(self):
         return PontoTurstico.objects.filter(aprovado=True)
 
+    def list(self, request, *args, **kwargs):  #sobescrevendo GET
+        return super(PontoTursticoViewSet, self).list(request, *args, **kwargs)
 
-    #def list(self, request, *args, **kwargs):  #sobescrevendo GET
-    #    return Response({'teste': 123})
+    def create(self, request, *args, **kwargs): #sobrescrevendo POST
+        return super(PontoTursticoViewSet, self).create(request, *args, **kwargs)
 
-    #def create(self, request, *args, **kwargs): #sobrescrevendo POST
-    #    pass
+    def destroy(self, request, *args, **kwargs): #sobrescrevendo DELETE (/código)
+        return super(PontoTursticoViewSet, self).destroy(request, *args, **kwargs)
 
-    #def destroy(self, request, *args, **kwargs): #sobrescrevendo DELETE (/código)
-    #    pass
+    def retrieve(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo GET (/codigo)
+        return super(PontoTursticoViewSet, self).retrieve(request, *args, **kwargs)
 
-    #def retrieve(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo GET (/codigo)
-    #    pass
+    def update(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo PUT (/codigo)
+        return super(PontoTursticoViewSet, self).update(request, *args, **kwargs)
 
-    #def update(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo PUT (/codigo)
-    #    pass
-
-    #def partial_update(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo PATCH (/codigo) (atualziando o parialmente o update)
-    #    pass
+    def partial_update(self, request, *args, **kwargs): # sobrescrevendo #sobescrevendo PATCH (/codigo) (atualziando o parialmente o update)
+        return super(PontoTursticoViewSet, self).partial_update(request, *args, **kwargs)
 
     #implementando nossas proprias actions
     @action(methods=['get'], detail=True) # http://127.0.0.1:8000/pontosturistico/2/denunciar/

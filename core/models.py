@@ -13,6 +13,7 @@ class PontoTurstico(models.Model):
     comentarios = models.ManyToManyField(Comentario)
     avaliacoes = models.ManyToManyField(Avaliacao)
     enderecos = models.ManyToManyField(Endereco)
+    foto = models.ImageField(upload_to='pt', null=True, blank=True)
 
     def __str__(self):
         return self.nome

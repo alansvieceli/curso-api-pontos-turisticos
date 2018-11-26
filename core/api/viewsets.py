@@ -1,6 +1,5 @@
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.response import Response
 from core.models import PontoTurstico
 from .serializers import PontoTursticoSerializer
 
@@ -14,7 +13,25 @@ class PontoTursticoViewSet(ModelViewSet):
     serializer_class = PontoTursticoSerializer
 
     def get_queryset(self):
-        return PontoTurstico.objects.filter(aprovado=True)
+        id = self.request.query_params.get('id', None)
+        nome = self.request.query_params.get('nome', None)
+        descricao = self.request.query_params.get('descricao', None)
+
+
+        queryset = PontoTurstico.objects.all();
+
+        if id:
+            queryset = PontoTurstico.objects.filter(id=id)
+
+        if nome:
+            queryset = queryset.filter(nome=nome)
+
+        if descricao:
+            queryset = queryset.filter(descricao=descricao)
+
+        return queryset
+
+        #return PontoTurstico.objects.filter(aprovado=True)
 
     def list(self, request, *args, **kwargs):  #sobescrevendo GET
         return super(PontoTursticoViewSet, self).list(request, *args, **kwargs)

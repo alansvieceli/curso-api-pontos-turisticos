@@ -40,8 +40,6 @@ class PontoTursticoViewSet(ModelViewSet):
         else:
             return queryset.filter(aprovado=True)
         '''
-
-
         #return PontoTurstico.objects.filter(aprovado=True)
 
     def list(self, request, *args, **kwargs):  #sobescrevendo GET

@@ -15,6 +15,14 @@ class PontoTursticoViewSet(ModelViewSet):
     filter_backends = (SearchFilter,)   # https://www.django-rest-framework.org/api-guide/filtering/#searchfilter
     search_fields = ('nome', 'descricao', 'enderecos__linha1')
 
+    '''
+    troca http://127.0.0.1:8000/pontosturisticos/1/
+    por http://127.0.0.1:8000/pontosturisticos/http://127.0.0.1:8000/pontosturisticos/Ponto%20Turistico%2001//
+    obs..o campo tem q ser unico, se tiver repetidos..vai da merda
+    '''
+    #lookup_field = 'nome'
+
+
     def get_queryset(self):
         id = self.request.query_params.get('id', None)
         nome = self.request.query_params.get('nome', None)

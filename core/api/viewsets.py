@@ -1,7 +1,11 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
+
 from core.models import PontoTurstico
+
 from .serializers import PontoTursticoSerializer
 
 
@@ -12,6 +16,8 @@ class PontoTursticoViewSet(ModelViewSet):
     #queryset = PontoTurstico.objects.all()
     #queryset = PontoTurstico.objects.filter(aprovado=True)
     serializer_class = PontoTursticoSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_classes = (TokenAuthentication, )  #no header usar Authorization Token xxxx
     filter_backends = (SearchFilter,)   # https://www.django-rest-framework.org/api-guide/filtering/#searchfilter
     search_fields = ('nome', 'descricao', 'enderecos__linha1')
 

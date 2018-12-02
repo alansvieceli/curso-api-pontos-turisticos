@@ -19,7 +19,6 @@ django-admin startproject api-pontos-turisticos .  (cria um novo projeto django,
 
 python manage.py createsuperuser --email alan.vieceli@gmail.com --username admin    (https://www.django-rest-framework.org/tutorial/quickstart/)
 
-
 /*https://docs.djangoproject.com/en/2.1/topics/migrations/*/
 python manage.py makemigrations
 python manage.py migrate
